@@ -21,10 +21,6 @@ async def on_ready():
 async def fish(ctx: Context):
     await ctx.reply(fish_func(ctx))
 
-@bot.command(name="subathon3")
-async def subathon3(ctx: Context):
-    await ctx.reply("https://storage.neurokaraoke.com/audio/anniversary%20mashup%20p3.wav")
-
 @bot.command(name="restart")
 @commands.is_owner()
 async def restart(ctx: Context):
