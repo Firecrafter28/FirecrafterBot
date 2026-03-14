@@ -29,7 +29,7 @@ RARITIES = [
 ]
 
 CATCHES = [
-{
+    {
         "name": "Cardboard Box",
         "value": 5
     },
@@ -68,5 +68,9 @@ CATCHES = [
     {
         "name": "Programmer's Socks",
         "value": 70
+    },
+    {
+        "name": "Metal Pipes",
+        "value": 150
     }
 ]

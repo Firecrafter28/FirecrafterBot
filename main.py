@@ -7,6 +7,7 @@ from discord.ext import commands
 from discord.ext.commands import Context
 from dotenv import load_dotenv
 from commands.fish.fish import fish as fish_func
+from commands.fish.fish import get_points
 import emotes
 
 load_dotenv()
@@ -21,10 +22,14 @@ async def on_ready():
 async def fish(ctx: Context):
     await ctx.reply(fish_func(ctx))
 
+@bot.command(name="points")
+async def points(ctx: Context):
+    await ctx.reply(get_points(ctx))
+
 @bot.command(name="restart")
 @commands.is_owner()
 async def restart(ctx: Context):
-    await ctx.send(f"Restarting {emotes.CERBER_LOADING}")
+    await ctx.reply(f"Restarting {emotes.CERBER_LOADING}")
     print("Restarting the bot...")
     subprocess.Popen([sys.executable] + sys.argv, creationflags=subprocess.CREATE_NEW_CONSOLE)
     os._exit(0)
