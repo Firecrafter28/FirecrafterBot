@@ -12,6 +12,8 @@ from commands.fish.fish import fish as fish_func
 from commands.fish.fish import get_leaderboard, build_leaderboard_embed, get_points
 import emotes
 
+from commands.help.help import help as help_func
+
 load_dotenv()
 
 bot = commands.Bot(command_prefix="_", intents=discord.Intents.all(), help_command=None)
@@ -41,7 +43,7 @@ async def on_ready():
     if os.getenv("ONLINE_CHANNEL_2") != "off":
         channel_2_specified = True
         target_channel_id_2 = int(str(os.getenv("ONLINE_CHANNEL_2")))
-  
+
     if channel_1_specified:
         await send_online_msg(target_channel_id_1)
     if channel_2_specified:
@@ -101,7 +103,7 @@ async def restart(ctx: Context):
 
 @bot.command(name="help")
 async def help(ctx: Context):
-    await ctx.reply(f"{emotes.NO} elp")
+    await ctx.reply(embed=help_func())
 
 @bot.command(name="stop")
 async def stop(ctx: Context):
