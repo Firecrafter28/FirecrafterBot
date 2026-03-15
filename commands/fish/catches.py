@@ -35,6 +35,7 @@ CATCHES: list[Catch] = [
     { "name": "Metal Pipes",              "value": 150 },
     { "name": emotes.NEURO_BWAA,          "value": 300 },
     { "name": emotes.EVIL_BWAA,           "value": 300 },
-    { "name": "The Duck on Neuro's Head", "value": 250 }
+    { "name": "The Duck on Neuro's Head", "value": 250 },
+    { "name": "[Filtered]",               "value": 150 }
 ]
 
